@@ -1,0 +1,23 @@
+{
+  "name": "next-prime-number",
+  "version": "1.0.0",
+  "description": "Just put in a number and the program will keep prompting you with the next prime number..",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "npx tsc -w",
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/figlet": "^1.5.6",
+    "@types/node": "^20.6.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "commander": "^11.0.0",
+    "figlet": "^1.6.0"
+  }
+}
