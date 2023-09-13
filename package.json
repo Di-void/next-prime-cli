@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Just put in a number and the program will keep prompting you with the next prime number..",
   "main": "dist/index.js",
+  "bin": {
+    "next-prime": "./dist/index.js"
+  },
   "type": "module",
   "scripts": {
     "dev": "npx tsc -w",
