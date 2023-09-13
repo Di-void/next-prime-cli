@@ -1,5 +1,6 @@
 import figlet from "figlet";
 import { Command } from "commander";
+import inquirer from "inquirer";
 
 const program = new Command();
 
@@ -12,9 +13,35 @@ program
     "Input a number and I will continue to prompt you with the next prime number"
   );
 
-program.argument("<number>", "the first number").action((number: string) => {
-  console.log(nextPrime(parseInt(number)));
-});
+program
+  .argument(
+    "<number>",
+    "the CLI will find the next prime number after this one"
+  )
+  .option("-l, --loop", "CLI continues to ask to go on")
+  .action(async (number: string, options) => {
+    let val = nextPrime(parseInt(number));
+    console.log(val);
+    if (options.loop) {
+      let shouldAskAgain = true;
+      while (shouldAskAgain) {
+        const answers = await inquirer.prompt([
+          {
+            type: "confirm",
+            name: "shouldSeeNext",
+            message: "Keep going ? :)",
+          },
+        ]);
+        if (answers.shouldSeeNext) {
+          val = nextPrime(val);
+          console.log(val);
+        } else {
+          shouldAskAgain = false;
+        }
+      }
+    }
+    console.log("\nMata ne ! ^_^");
+  });
 
 program.parse();
 
