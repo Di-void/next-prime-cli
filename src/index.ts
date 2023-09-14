@@ -42,7 +42,7 @@ program
         }
       }
     }
-    console.log("\nMata ne ! ^_^");
+    console.log("\nMata ne! ^_^");
   })
   .showHelpAfterError("(add the -h or --help `for additional information)");
 
