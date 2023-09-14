@@ -12,7 +12,8 @@ Toy CLI for finding the next prime number after the first argument passed to it.
 # This will clone to current directory
 git clone https://github.com/Di-void/next-prime-cli.git .
 
-pnpm add
+# You can use your fave pkg manager here (node is required)
+pnpm i
 
 pnpm run build
 
